@@ -12,7 +12,7 @@ GameObject:
   - 136: {fileID: 13656994}
   - 23: {fileID: 2315878}
   - 114: {fileID: 11408014}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
