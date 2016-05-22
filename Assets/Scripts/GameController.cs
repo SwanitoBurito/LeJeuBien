@@ -28,14 +28,14 @@ public class GameController : MonoBehaviour {
             if (m_player.GetComponent<LifeController>().GetLife() == 0)
             {
                 m_gameOver = true;
-                playerText.text = "Player wins";
-                godText.text = "Player wins";
+                playerText.text = "God wins";
+                godText.text = "God wins";
             }
             else if (m_god.GetComponent<LifeController>().GetLife() == 0)
             {
                 m_gameOver = true;
-                playerText.text = "God wins";
-                godText.text = "God wins";
+                playerText.text = "Player wins";
+                godText.text = "Player wins";
             }
         }
 
