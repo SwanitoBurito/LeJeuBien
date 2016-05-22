@@ -4,7 +4,7 @@ using System.Collections;
 
 public class GameController : MonoBehaviour {
 
-    public float restartDelay = 4.0f;
+    public TextMesh playerText;
 
     GameObject m_player;
     GameObject m_god;
@@ -26,20 +26,12 @@ public class GameController : MonoBehaviour {
             if (m_player.GetComponent<LifeController>().GetLife() == 0)
             {
                 m_gameOver = true;
-                Debug.Log("Player wins");
+                playerText.text = "Player wins";
             }
             else if (m_god.GetComponent<LifeController>().GetLife() == 0)
             {
                 m_gameOver = true;
-                Debug.Log("God wins");
-            }
-        }
-        else
-        {
-            m_gameOverTimer += Time.deltaTime;
-            if (m_gameOverTimer > restartDelay)
-            {
-                ResetGame();
+                playerText.text = "God wins";
             }
         }
 
