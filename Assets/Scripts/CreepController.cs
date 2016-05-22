@@ -4,9 +4,12 @@ using System.Collections;
 public class CreepController : MonoBehaviour {
 
     public float speed = 5.0f;
+    public float hitDelay = 1.0f;
 
     GameObject m_player;
     bool m_dead = false;
+    float m_closeRangeTimer = 0.0f;
+    bool m_isInCloseRange = false;
 
 	// Use this for initialization
 	void Start ()
@@ -20,18 +23,23 @@ public class CreepController : MonoBehaviour {
         if (m_dead)
             return;
 
-	    if (m_player)
+	    if (m_player && !m_isInCloseRange)
         {
             Vector3 delta = (m_player.transform.position - transform.position);
-            float distance = delta.magnitude;
+            Vector3 direction = delta.normalized;
+            Vector3 pos = transform.position;
+            pos += direction * speed * Time.deltaTime;
+            transform.position = pos;
+            transform.rotation = Quaternion.LookRotation(direction, Vector3.up);
+        }
 
-            if (distance > 1.0f)
+        if (m_isInCloseRange)
+        {
+            m_closeRangeTimer += Time.deltaTime;
+            if (m_closeRangeTimer > hitDelay)
             {
-                Vector3 direction = delta.normalized;
-                Vector3 pos = transform.position;
-                pos += direction * speed * Time.deltaTime;
-                transform.position = pos;
-                transform.rotation = Quaternion.LookRotation(direction, Vector3.up);
+                GameObject.Find("_Player").SendMessage("Hit"); // Finding the target like this is completely pourrave, please look away
+                m_closeRangeTimer = 0.0f;
             }
         }
 	}
@@ -47,6 +55,23 @@ public class CreepController : MonoBehaviour {
             rigidbody.AddForce(col.impulse * 4.0f, ForceMode.Impulse);
             Destroy(this.gameObject, 1.0f);
             m_dead = true;
+        }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("HitZone"))
+        {
+            m_isInCloseRange = true;
+            m_closeRangeTimer = 0.0f;
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("HitZone"))
+        {
+            m_isInCloseRange = false;
         }
     }
 }
