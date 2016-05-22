@@ -1,0 +1,23 @@
+Remi:
+
+- 5 Points de vie pour le player, qui décrémente a la distance entre lui et un mob inferieur à 1.0m pendant 1s
+
+- 5 Points de vie pour la sphere god qui decremente sur une col avec une capsule
+
+- Show winner dans le ciel sphere win ou player win
+
+- Reset after game over en appuyant sur Enter lors du game over
+
+
+
+Swann:
+
+- Cool down entre les spawns de mobs
+
+- Spawn random des spheres de hide
+
+- Molette qui change la hauteur de la sphere god
+
+- Angle du shoot avec les manettes
+
+- Integration du visuel de foehn pour les flingues

@@ -6,6 +6,7 @@ public class CreepController : MonoBehaviour {
     public float speed = 5.0f;
 
     GameObject m_player;
+    bool m_dead = false;
 
 	// Use this for initialization
 	void Start ()
@@ -16,6 +17,9 @@ public class CreepController : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
+        if (m_dead)
+            return;
+
 	    if (m_player)
         {
             Vector3 delta = (m_player.transform.position - transform.position);
@@ -34,9 +38,15 @@ public class CreepController : MonoBehaviour {
 
     void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.layer == LayerMask.GetMask("Ammo"))
+        if (col.gameObject.layer == LayerMask.NameToLayer("Ammo"))
         {
-            Destroy(this.gameObject);
+            Rigidbody rigidbody = GetComponent<Rigidbody>();
+            rigidbody.isKinematic = false;
+            rigidbody.useGravity = true;
+            rigidbody.constraints = RigidbodyConstraints.None;
+            rigidbody.AddForce(col.impulse * 4.0f, ForceMode.Impulse);
+            Destroy(this.gameObject, 1.0f);
+            m_dead = true;
         }
     }
 }

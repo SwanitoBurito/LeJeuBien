@@ -12,10 +12,9 @@ public class Gun : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (SteamVR_Controller.Input(controllerIndex).GetPress(SteamVR_Controller.ButtonMask.Trigger))
+        if (SteamVR_Controller.Input(controllerIndex).GetPressDown(SteamVR_Controller.ButtonMask.Trigger)/*&&!GameObject.Find("Capsule(Clone)")*/)
         {
             Color myCol = new Color(Random.Range(0.0f,1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f));
-            Debug.Log(myCol);
             GameObject lolCube = (GameObject)Instantiate(cubeAmmo, this.transform.position, this.transform.rotation);
             //lolCube.transform.localScale = new Vector3(Random.Range(0.0f, 0.4f), Random.Range(0.0f, 0.4f), Random.Range(0.0f, 0.4f));
             lolCube.GetComponent<MeshRenderer>().material.color = myCol;
