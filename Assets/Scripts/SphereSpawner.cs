@@ -19,7 +19,7 @@ public class SphereSpawner : MonoBehaviour {
         {
             //random position
             Vector3 pos = new Vector3(Random.Range(-5.0f, 5.0f), Random.Range(0.0f, 4.0f), Random.Range(-5.0f, 5.0f));
-            GameObject disSphere = (GameObject)Instantiate(sphere, pos, Quaternion.identity);
+            Instantiate(sphere, pos, Quaternion.identity);
         }
 
 

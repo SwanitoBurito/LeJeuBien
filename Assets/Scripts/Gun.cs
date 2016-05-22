@@ -15,7 +15,7 @@ public class Gun : MonoBehaviour {
         if (SteamVR_Controller.Input(controllerIndex).GetPressDown(SteamVR_Controller.ButtonMask.Trigger)/*&&!GameObject.Find("Capsule(Clone)")*/)
         {
             Color myCol = new Color(Random.Range(0.0f,1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f));
-            GameObject lolCube = (GameObject)Instantiate(cubeAmmo, this.transform.position, transform.Find("Aim").transform.rotation);
+            GameObject lolCube = (GameObject)Instantiate(cubeAmmo, transform.Find("Aim").transform.position, transform.Find("Aim").transform.rotation);
             //lolCube.transform.localScale = new Vector3(Random.Range(0.0f, 0.4f), Random.Range(0.0f, 0.4f), Random.Range(0.0f, 0.4f));
             lolCube.GetComponent<MeshRenderer>().material.color = myCol;
         };
