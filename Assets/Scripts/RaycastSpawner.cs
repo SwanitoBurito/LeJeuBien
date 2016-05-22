@@ -11,7 +11,7 @@ public class RaycastSpawner : MonoBehaviour {
     protected GameObject playerGo;
     protected GameObject mouseCursor;
 
-    private float coolDownBetweenMobSpawn = 0.8f;
+    public float coolDownBetweenMobSpawn = 0.5f;
     private float coolDownTimer;
 
     // Use this for initialization
@@ -36,8 +36,11 @@ public class RaycastSpawner : MonoBehaviour {
 
         if(Input.GetAxis("Mouse ScrollWheel") < 0)
         {
-            Vector3 offsetY = new Vector3(0.0f, godSphereSeedOnY, 0.0f);
-            mouseCursor.transform.position += offsetY;
+            if (mouseCursor.transform.position.y < 4.0f)
+            {
+                Vector3 offsetY = new Vector3(0.0f, godSphereSeedOnY, 0.0f);
+                mouseCursor.transform.position += offsetY;
+            }
         } else if (Input.GetAxis("Mouse ScrollWheel") > 0)
         {
             if (mouseCursor.transform.position.y > 0.0f) {

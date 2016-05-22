@@ -12,6 +12,8 @@ Remi:
 
 Swann:
 
+- Cursor snappé sur la sphere au start
+
 - Angle du shoot avec les manettes
 
 - Integration du visuel de foehn pour les flingues
