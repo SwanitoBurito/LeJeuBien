@@ -9,10 +9,9 @@ Remi:
 - Reset after game over en appuyant sur Enter lors du game over
 
 
-
 Swann:
 
-- Cursor snappé sur la sphere au start
+
 
 
 
@@ -28,3 +27,9 @@ Done:
 - Angle du shoot avec les manettes
 
 - Integration du visuel de foehn pour les flingues
+
+
+
+Not Done:
+
+- Cursor snappé sur la sphere au start
