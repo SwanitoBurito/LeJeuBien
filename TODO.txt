@@ -14,10 +14,6 @@ Swann:
 
 - Cursor snappé sur la sphere au start
 
-- Angle du shoot avec les manettes
-
-- Integration du visuel de foehn pour les flingues
-
 
 
 
@@ -28,3 +24,7 @@ Done:
 - Cool down entre les spawns de mobs
 
 - Spawn random des spheres de hide
+
+- Angle du shoot avec les manettes
+
+- Integration du visuel de foehn pour les flingues
