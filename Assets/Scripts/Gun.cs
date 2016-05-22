@@ -7,7 +7,6 @@ public class Gun : MonoBehaviour {
     public int controllerIndex = 0;
 	// Use this for initialization
 	void Start () {
-        Debug.Log("Displays: " + Display.displays.Length);
         controllerIndex = (int)GetComponent<SteamVR_TrackedObject>().index;
 	}
 	
