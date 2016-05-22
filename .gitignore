@@ -6,3 +6,7 @@ obj/**
 **.csproj
 **.sln
 **.suo
+Assets/SteamVR.meta
+Assets/SteamVR/
+Assets/Plugins.meta
+Assets/Plugins/
