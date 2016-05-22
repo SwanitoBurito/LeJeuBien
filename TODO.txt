@@ -12,12 +12,19 @@ Remi:
 
 Swann:
 
-- Cool down entre les spawns de mobs
-
-- Spawn random des spheres de hide
-
-- Molette qui change la hauteur de la sphere god
+- Cursor snappé sur la sphere au start
 
 - Angle du shoot avec les manettes
 
 - Integration du visuel de foehn pour les flingues
+
+
+
+
+Done:
+
+- Molette qui change la hauteur de la sphere god
+
+- Cool down entre les spawns de mobs
+
+- Spawn random des spheres de hide
