@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class GameController : MonoBehaviour {
 
     public TextMesh playerText;
+    public Text godText;
 
     GameObject m_player;
     GameObject m_god;
@@ -27,11 +29,13 @@ public class GameController : MonoBehaviour {
             {
                 m_gameOver = true;
                 playerText.text = "Player wins";
+                godText.text = "Player wins";
             }
             else if (m_god.GetComponent<LifeController>().GetLife() == 0)
             {
                 m_gameOver = true;
                 playerText.text = "God wins";
+                godText.text = "God wins";
             }
         }
 
