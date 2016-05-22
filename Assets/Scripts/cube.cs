@@ -14,6 +14,7 @@ public class cube : MonoBehaviour {
     public float lifetime = 5.0f;
     public float destroyTime = 1.0f;
 
+    //Même remi il sait pas à quoi ça sert tout ça
     private const float PI = Mathf.PI;
 	private const float PI2 = Mathf.PI / 2.0f;
 	private const float B1 = 1.0f / 2.75f;
