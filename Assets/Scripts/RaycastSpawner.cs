@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEditor;
 using System.Collections;
 
 public class RaycastSpawner : MonoBehaviour {
@@ -15,16 +16,19 @@ public class RaycastSpawner : MonoBehaviour {
     private float coolDownTimer;
 
     // Use this for initialization
-    void Start ()
+    void Start()
     {
-	    playerGo = GameObject.Find("_Player");
+        playerGo = GameObject.Find("_Player");
         mouseCursor = GameObject.Find("Cursor");
         coolDownTimer = coolDownBetweenMobSpawn;
     }
-	
-	// Update is called once per frame
-	void Update ()
+
+    // Update is called once per frame
+    void Update()
     {
+        if (sourceCamera == null || !sourceCamera.isActiveAndEnabled)
+            return;
+
         //Sphere du player
         Ray rayMouse = sourceCamera.ScreenPointToRay(Input.mousePosition);
         RaycastHit hitMouse;
