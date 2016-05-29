@@ -105,7 +105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af042b2d4529d904e88f97af0ceee907, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forceNoVRMode: 0
+  noVRMode: 0
   steamVRPrefab: {fileID: 172094, guid: 5c4246aa4fa02214a83341daceec98a0, type: 2}
   noSteamVRPrefab: {fileID: 114358, guid: 2cff02902cb29224382c611ccc8d68e1, type: 2}
 --- !u!114 &11475158

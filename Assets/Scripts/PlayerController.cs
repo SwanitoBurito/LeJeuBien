@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PlayerController : MonoBehaviour {
 
-    public bool forceNoVRMode = false;
+    public bool noVRMode = false;
 
     public GameObject steamVRPrefab;
     public GameObject noSteamVRPrefab;
@@ -13,9 +13,16 @@ public class PlayerController : MonoBehaviour {
     {
         GameObject obj;
 
-	    if (SteamVR.active && !forceNoVRMode)
+	    if (!noVRMode)
         {
             obj = GameObject.Instantiate(steamVRPrefab);
+
+            // Deactivate VR display overlay in standalone mode (that way, we can see something else than the VR display)
+            SteamVR_GameView gameView = obj.GetComponentInChildren<SteamVR_GameView>();
+            if (gameView)
+            {
+                gameView.enabled = Application.isEditor;
+            }
         }
         else
         {
