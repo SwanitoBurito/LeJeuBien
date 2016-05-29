@@ -8,7 +8,15 @@ public class VRMessageController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+        Camera camera = GameObject.Find("_Player").GetComponentInChildren<Camera>();
+        if (camera)
+        {
+            head = camera.gameObject;
+        }
+        else
+        {
+            Debug.LogError("No VR player");
+        }
 	}
 	
 	// Update is called once per frame

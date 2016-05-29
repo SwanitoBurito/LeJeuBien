@@ -11,7 +11,6 @@ public class GameController : MonoBehaviour {
     GameObject m_player;
     GameObject m_god;
     bool m_gameOver = false;
-    float m_gameOverTimer = 0.0f;
 
     // Use this for initialization
     void Start ()
