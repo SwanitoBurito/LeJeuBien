@@ -131,7 +131,7 @@ Prefab:
     - target: {fileID: 3331176, guid: 3e2b611146ae92f48a3b6de7297c47d0, type: 2}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 374122946}
+      objectReference: {fileID: 460386185}
     - target: {fileID: 11472294, guid: 3e2b611146ae92f48a3b6de7297c47d0, type: 2}
       propertyPath: steamVRPrefab
       value: 
@@ -235,7 +235,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!43 &374122946
+--- !u!43 &460386185
 Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}

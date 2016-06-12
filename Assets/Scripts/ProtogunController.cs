@@ -34,6 +34,11 @@ public class ProtogunController : MonoBehaviour {
         Quaternion q = m_gunPivot.localRotation;
         q = q * m_handleToAxis;
         m_gunPivot.localRotation = q;
+
+        Vector3 angles = m_gunPivot.rotation.eulerAngles;
+        angles.z = rightHand.transform.rotation.eulerAngles.z;
+        m_gunPivot.rotation = Quaternion.Euler(angles);
+
 	    /*Vector3 pivotToHand = m_gunRoot.InverseTransformPoint(leftHand.transform.position) - m_gunRoot.InverseTransformPoint(m_gunPivot.position);
 
         Debug.DrawLine(m_gunPivot.position, m_gunRoot.TransformPoint(m_purePivotToHand), Color.blue);
